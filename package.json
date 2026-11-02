@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test": "jest --detectOpenHandles --forceExit"
+    "test": "jest --detectOpenHandles --forceExit",
+    "test:headed": "HEADLESS=false jest --detectOpenHandles --forceExit"
   },
   "dependencies": {
     "react": "^19.3.1",

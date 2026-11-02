@@ -1,5 +1,6 @@
-const { Builder, By, until } = require('selenium-webdriver');
+const { By, until } = require('selenium-webdriver');
 const firefox = require('selenium-webdriver/firefox');
+const { createDriver } = require('./driverFactory');
 
 const timeout = 30000;
 
@@ -7,14 +8,7 @@ describe('React App E2E Tests (Jest + Selenium + Firefox)', () => {
   let driver;
 
   beforeAll(async () => {
-    let options = new firefox.Options();
-    // Uncomment the line below if you want headless mode in CI
-    // options.addArguments('-headless');
-
-    driver = await new Builder()
-      .forBrowser('firefox')
-      .setFirefoxOptions(options)
-      .build();
+    driver = await createDriver();
 
     // Ensure your Vite app is running via `npm run dev` on port 5173
     await driver.get('http://localhost:5173');
