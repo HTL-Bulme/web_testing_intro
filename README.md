@@ -11,5 +11,5 @@ While the project's dev server is running, execute the tests
 via
 
 ```shell
-npm run test
+npm run test  # or `npm run test:headed`
 ```
